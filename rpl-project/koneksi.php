@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke database
 $servername = "localhost";
-$username = "root"; // Ganti dengan username Anda
-$password = ""; // Ganti dengan password Anda
-$dbname = "user_db"; // Ganti dengan nama database Anda
+$username = "root";
+$password = "";
+$dbname = "user_db"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -24,7 +24,6 @@ $sql = "INSERT INTO user_form (nama, email, password, user_type) VALUES ('$name'
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign Up berhasil!";
-    // Arahkan pengguna ke halaman login
     header("Location: index.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
